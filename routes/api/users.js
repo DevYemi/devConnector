@@ -14,7 +14,7 @@ const auth = require('../../middleware/auth')
 // @access  Public
 routes.get("/test", (req, res) => res.json({ mssg: "user works" }));
 
-// @route   Get api/users/register
+// @route   Post api/users/register
 // @desc    Register new user
 // @access  Public
 routes.post("/register", validateRegisterInput, async (req, res) => {
