@@ -5,22 +5,25 @@ import Landing from './components/layout/Landing';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import { Provider } from 'react-redux'
+import store from './store';
+
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path='/' component={Landing} />
-          <>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Landing} />
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
-          </>
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
+    </Provider>
   );
 }
 
